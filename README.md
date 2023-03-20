@@ -30,4 +30,4 @@ Click this [link](https://hnamdev21.github.io/beauty-of-beaches-remake/)
 
 #### Question: There are no setup?
 
-Yup, because this is just a pure HTML, CSS project
+Yup, this project don't use Framework or Library
