@@ -1,0 +1,23 @@
+import Router from "./Utils/Router/Router.js";
+
+const APP_URL = new URL(window.location);
+const APP_PATH = APP_URL.pathname.slice(1);
+
+class App {
+  constructor(APP_URL, APP_PATH) {
+    this.url = APP_URL;
+    this.path = APP_PATH;
+  }
+
+  setPath() {
+    const APP_URL = new URL(window.location);
+    const APP_PATH = APP_URL.pathname.slice(1);
+
+    Router(APP_PATH);
+  }
+}
+
+const APP = new App(APP_URL, APP_PATH);
+
+window.addEventListener("load", APP.setPath);
+window.addEventListener("hashchange", APP.setPath);
