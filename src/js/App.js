@@ -12,7 +12,7 @@ class App {
 
   setPath() {
     const APP_URL = new URL(window.location);
-    const APP_PATH = APP_URL.pathname.slice(1);
+    const APP_PATH = APP_URL.hash.slice(1);
 
     Router(APP_PATH);
   }

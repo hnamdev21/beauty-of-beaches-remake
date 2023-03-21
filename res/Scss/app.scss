@@ -643,6 +643,177 @@ body {
       }
     }
   }
+
+  // Gallery Page
+  .gallery-section {
+    margin-top: 150px;
+    padding-bottom: 30px;
+
+    .title--md {
+      text-align: center;
+    }
+
+    .inner {
+      margin-top: 30px;
+      column-gap: 20px;
+
+      .side-bar {
+        flex: 1;
+        max-width: 285px;
+        height: 500px;
+        background-color: #ffffff;
+        border: 0.5px solid #000000;
+        border-radius: 5px;
+      }
+
+      .wrapper-gallery {
+        flex: 2;
+        max-width: 895px;
+
+        #search-form {
+          width: max-content;
+          margin: 0 auto;
+
+          .search-input {
+            height: 50px;
+            width: 300px;
+            border: unset;
+            border-radius: 5px;
+            background: none;
+            background-color: #ffffff;
+            padding: 10px;
+            box-shadow: 0 1px 15px 0 rgba(0, 0, 0, 0.4);
+            font-size: 18px;
+
+            &:focus {
+              outline: none;
+            }
+
+            &::placeholder {
+              font-size: 16px;
+            }
+          }
+        }
+
+        .gallery {
+          margin-top: 20px;
+          gap: 20px;
+          flex-wrap: wrap;
+
+          .card {
+            height: 350px;
+            width: 285px;
+            border-radius: 10px;
+            background-color: #ffffff;
+            border: 0.5px solid #000000;
+            overflow: hidden;
+            transition: all 0.3s linear;
+
+            .top-card {
+              width: 100%;
+              height: 100%;
+              transition: all 0.3 linear;
+
+              .card-image {
+                width: 100%;
+                height: 100%;
+                border-radius: 10px 10px 0 0;
+                overflow: hidden;
+
+                .beach__image {
+                  width: 250%;
+                }
+              }
+
+              .card-sub-element {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                font-size: 20px;
+                color: #ffffff;
+                cursor: pointer;
+
+                &:hover {
+                  animation: beat 0.5s linear infinite;
+                }
+
+                .fa-solid {
+                  color: var(--light-red);
+                }
+              }
+            }
+
+            .bot-card {
+              width: 100%;
+              height: 200px;
+              padding: 10px;
+              background-color: #ffffff;
+              transform: translate(0, 100%);
+              transition: all 1s linear;
+
+              .beach__name {
+                font-size: 18px;
+                font-weight: 400;
+              }
+
+              .beach__info {
+                li {
+                  font-size: 14px;
+                  padding-left: 10px;
+                }
+              }
+
+              .beach__link {
+                position: absolute;
+                bottom: 5px;
+                left: 50%;
+                transform: translate(-50%, 0);
+                color: var(--light-blue);
+                font-size: 12px;
+                font-style: italic;
+              }
+            }
+
+            &:hover {
+              border: unset;
+              box-shadow: 0 1px 15px 0 rgba(0, 0, 0, 0.5);
+
+              .bot-card {
+                z-index: 1;
+                transform: translate(0, -100%);
+              }
+            }
+          }
+        }
+
+        .pagination {
+          width: max-content;
+          margin: 20px auto 0;
+
+          li {
+            margin: 0 10px 0;
+            padding: 5px 0;
+            border-radius: 5px;
+            background-color: var(--light-blue);
+            cursor: pointer;
+
+            &:hover {
+              background-color: var(--md-blue);
+            }
+
+            &.active {
+              background-color: var(--deep-blue);
+            }
+
+            a {
+              padding: 5px 15px;
+              color: #ffffff;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 #footer-page {

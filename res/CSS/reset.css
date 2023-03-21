@@ -18,6 +18,7 @@ a {
 }
 
 ul,
+li,
 nav {
   list-style-type: none;
 }

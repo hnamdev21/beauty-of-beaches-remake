@@ -22,6 +22,26 @@ getFestivals().then((data) => {
   for (let i = 0; i < maxItem; i++) {
     const card = document.createElement("div");
     card.classList = "card flex";
+
+    const startingTime = new Date(data[i].startingTime);
+    const currentTime = new Date();
+    let distance = startingTime - currentTime;
+
+    let days = Math.floor(distance / (24 * 60 * 60 * 1000));
+    let hours = Math.floor(distance / (60 * 60 * 1000)) % 24;
+    let minutes = Math.floor(distance / (60 * 1000)) % 60;
+    let seconds = Math.floor(distance / 1000) % 60;
+
+    // setInterval(() => {
+    //   const currentTime = new Date();
+    //   distance = startingTime - currentTime;
+
+    //   days = Math.floor(distance / (24 * 60 * 60 * 1000));
+    //   hours = Math.floor(distance / (60 * 60 * 1000)) % 24;
+    //   minutes = Math.floor(distance / (60 * 1000)) % 60;
+    //   seconds = Math.floor(distance / 1000) % 60;
+    // }, 1000);
+
     card.innerHTML = `
             <div class="left-card">
               <div class="card-image">
@@ -45,16 +65,16 @@ getFestivals().then((data) => {
                   class="festival__countdown flex flex-align-center flex-space-between"
                 >
                   <div class="countdown__day">
-                    Day <span class="day">1</span>
+                    Day <span class="day">${days}</span>
                   </div>
                   <div class="countdown__hour">
-                    Hour <span class="hour">1</span>
+                    Hour <span class="hour">${hours}</span>
                   </div>
                   <div class="countdown__minutes">
-                    Minute <span class="minutes">1</span>
+                    Minute <span class="minutes">${minutes}</span>
                   </div>
                   <div class="countdown__second">
-                    Second <span class="second">1</span>
+                    Second <span class="second">${seconds}</span>
                   </div>
                 </div>
             </div>`;
