@@ -183,7 +183,7 @@ body {
     left: unset;
     right: -40px; }
   #main-page .top-list-section .inner .mask {
-    height: 330px;
+    height: 350px;
     overflow: auto; }
     #main-page .top-list-section .inner .mask::-webkit-scrollbar {
       display: none; }
@@ -245,7 +245,7 @@ body {
           transform: translate(0, -100%); }
 
 #main-page .latest-feedback-section {
-  margin-top: 80px; }
+  margin-top: 30px; }
   #main-page .latest-feedback-section .inner .wrapper-title .title--md {
     text-align: center; }
   #main-page .latest-feedback-section .inner .mask {
