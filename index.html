@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <base href="/" />
+
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,12 +22,61 @@
     <link rel="stylesheet" href="res/CSS/font.css" />
     <link rel="stylesheet" href="res/CSS/root.css" />
     <link rel="stylesheet" href="res/CSS/reset.css" />
+    <link rel="stylesheet" href="res/CSS/common.css" />
     <link rel="stylesheet" href="res/CSS/animation.css" />
-    <!-- <link rel="stylesheet" href="res/CSS/app.css" /> -->
+    <link rel="stylesheet" href="res/CSS/app.css" />
 
     <script type="module" src="src/JavaScript/App.js"></script>
   </head>
+
   <body>
-    <div id="root"></div>
+    <header id="header-page">
+      <div class="inner flex flex-align-center">
+        <div class="wrapper-logo">
+          <a href="#" class="logo">
+            <img
+              src="res/Images/logo/logo_beachourSVG-white.svg"
+              alt="Beachour Logo"
+            />
+          </a>
+        </div>
+
+        <nav class="wrapper-nav flex">
+          <li class="nav-link">
+            <a href="#" class="active">HOME</a>
+          </li>
+          <li class="nav-link">
+            <a href="#">GALLERY</a>
+          </li>
+          <li class="nav-link">
+            <a href="#">FESTIVALS</a>
+          </li>
+          <li class="nav-link">
+            <a href="#">CONTACT</a>
+          </li>
+          <li class="nav-link">
+            <a href="#">ABOUT</a>
+          </li>
+        </nav>
+
+        <div class="wrapper-other-opt relative">
+          <div class="wrapper-favorite-icon">
+            <i class="fa-solid fa-heart"></i>
+            <div class="count-items circle">0</div>
+          </div>
+
+          <ul class="wrapper-favorite-items absolute"></ul>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-page"></main>
+
+    <footer id="footer-page">
+      <div class="inner flex flex-align-center flex-space-between relative">
+        <span class="designer">Design by Hoang Nam Tran</span>
+        <span class="developer">Develop by Hoang Nam Tran</span>
+      </div>
+    </footer>
   </body>
 </html>
