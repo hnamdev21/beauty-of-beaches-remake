@@ -1,4 +1,5 @@
 import Router from "./Utils/Router/Router.js";
+import toggleClassNameHeader from "./DOM/toggleClassNameHeader.js";
 
 const APP_URL = new URL(window.location);
 const APP_PATH = APP_URL.pathname.slice(1);
@@ -20,4 +21,5 @@ class App {
 const APP = new App(APP_URL, APP_PATH);
 
 window.addEventListener("load", APP.setPath);
+window.addEventListener("load", toggleClassNameHeader);
 window.addEventListener("hashchange", APP.setPath);

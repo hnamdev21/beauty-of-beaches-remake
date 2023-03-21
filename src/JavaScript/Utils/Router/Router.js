@@ -1,8 +1,8 @@
-import RenderHomePage from "./HomePage/RenderHomePage.js";
-import RenderGalleryPage from "./GalleryPage/RenderGalleryPage.js";
-import RenderFestivalsPage from "./FestivalsPage/RenderFestivalsPage.js";
-import RenderAboutPage from "./AboutPage/RenderAboutPage.js";
-import RenderContactPage from "./ContactPage/RenderContactPage.js";
+import RenderHomePage from "./Render/HomePage/RenderHomePage.js";
+import RenderGalleryPage from "./Render/GalleryPage/RenderGalleryPage.js";
+import RenderFestivalsPage from "./Render/FestivalsPage/RenderFestivalsPage.js";
+import RenderAboutPage from "./Render/AboutPage/RenderAboutPage.js";
+import RenderContactPage from "./Render/ContactPage/RenderContactPage.js";
 
 const Router = (path) => {
   switch (path) {

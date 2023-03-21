@@ -1,12 +1,13 @@
 import heroSection from "./Components/HeroSection.js";
 import introSection from "./Components/IntroSection.js";
-import breadcrumbSection from "../BreadcrumbSection.js";
+import breadcrumbSection from "../../BreadcrumbSection.js";
 import topFamousSection from "./Components/TopFamousSection.js";
 import feedbackSection from "./Components/FeedbackSection.js";
 import festivalsSection from "./Components/FestivalsSection.js";
 import subcribeSection from "./Components/SubcribeSection.js";
 import topListViewsSection from "./Components/TopViewsSection.js";
-import addEventScrollList from "../../../DOM/AddEventScrollList.js";
+import addEventScrollList from "../../../../DOM/addEventScrollList.js";
+import addHandleClickHeartIconOnCard from "./Services/addHandleClickHeartIconOnCard.js";
 
 const RenderHomePage = () => {
   const mainPageElement = document.getElementById("main-page");
@@ -21,6 +22,7 @@ const RenderHomePage = () => {
   mainPageElement.appendChild(topListViewsSection);
 
   addEventScrollList();
+  addHandleClickHeartIconOnCard();
 };
 
 export default RenderHomePage;

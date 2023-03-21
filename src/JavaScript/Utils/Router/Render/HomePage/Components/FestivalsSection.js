@@ -1,4 +1,4 @@
-import { getFestivals } from "../../../../Modules/GetData.js";
+import { getFestivals } from "../../../../../Modules/GetData.js";
 
 const festivalsSection = document.createElement("section");
 festivalsSection.className = "festivals-section";

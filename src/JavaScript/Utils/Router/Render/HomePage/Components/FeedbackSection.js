@@ -1,4 +1,4 @@
-import { getFeedback } from "../../../../Modules/GetData.js";
+import { getFeedback } from "../../../../../Modules/GetData.js";
 
 const feedbackSection = document.createElement("section");
 feedbackSection.className = "latest-feedback-section";

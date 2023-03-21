@@ -1,4 +1,4 @@
-import { getBeaches } from "../../../../Modules/GetData.js";
+import { getBeaches } from "../../../../../Modules/GetData.js";
 
 const topListViewsSection = document.createElement("section");
 topListViewsSection.className = "top-list-section top-10-views";
