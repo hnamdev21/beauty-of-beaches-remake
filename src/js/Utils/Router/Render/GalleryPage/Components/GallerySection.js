@@ -1,4 +1,6 @@
 import { getBeaches } from "../../../../../Modules/GetData.js";
+import resetGallery from "../Services/resetGallery.js";
+import renderCards from "../Services/renderCards.js";
 import checkSearchInput from "../Services/checkSearchInput.js";
 
 const beachesPerPage = 9;
@@ -20,43 +22,13 @@ gallerySection.innerHTML = `<h1 class="title--md">Find your peace</h1>
                                 </div>
                             </div>`;
 const searchInput = gallerySection.querySelector("#search-input");
+const gallery = gallerySection.querySelector(".gallery");
 
-const resetGallery = () => {
-  const gallery = gallerySection.querySelector(".gallery");
-  gallery.innerHTML = ``;
-};
-const renderFiltered = (filteredBeaches) => {
+const renderFilteredByText = (filteredBeaches) => {
   resetGallery();
-  const gallery = gallerySection.querySelector(".gallery");
-
-  filteredBeaches.forEach((beach) => {
-    const card = document.createElement("div");
-    card.className = "card";
-
-    card.innerHTML = `<div class="top-card relative">
-                        <div class="card-image">
-                            <img
-                            src="${beach.image1}"
-                            alt="${beach.name}"
-                            class="beach__image"
-                            />
-                        </div>
-                        <div class="card-sub-element">
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                      </div>
-                      <div class="bot-card relative">
-                        <h4 class="beach__name">${beach.name}</h4>
-                        <ul class="beach__info">
-                            <li class="info__loaction">Location: ${beach.location}</li>
-                            <li class="info__views">Views: ${beach.views}</li>
-                            <li class="info__famous">Famous: ${beach.famous}</li>
-                        </ul>
-                        <a href="/beach/id?${beach.id}" class="beach__link">Learn more</a>
-                      </div>`;
-
-    gallery.appendChild(card);
-  });
+  startIndex = 0;
+  endIndex = beachesPerPage;
+  renderCards(gallery, filteredBeaches, startIndex, endIndex);
 };
 
 searchInput.addEventListener("keyup", (e) => {
@@ -67,41 +39,12 @@ searchInput.addEventListener("keyup", (e) => {
     resetGallery();
     getBeaches().then((data) => renderBeaches(data, startIndex, endIndex));
   } else {
-    renderFiltered(filteredBeaches);
+    renderFilteredByText(filteredBeaches);
   }
 });
 
 const renderBeaches = (data, startIndex, endIndex) => {
-  const gallery = gallerySection.querySelector(".gallery");
-
-  for (let i = startIndex; i < endIndex; i++) {
-    const card = document.createElement("div");
-    card.className = "card";
-
-    card.innerHTML = `<div class="top-card relative">
-                        <div class="card-image">
-                            <img
-                            src="${data[i].image1}"
-                            alt="${data[i].name}"
-                            class="beach__image"
-                            />
-                        </div>
-                        <div class="card-sub-element">
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                      </div>
-                      <div class="bot-card relative">
-                        <h4 class="beach__name">${data[i].name}</h4>
-                        <ul class="beach__info">
-                            <li class="info__loaction">Location: ${data[i].location}</li>
-                            <li class="info__views">Views: ${data[i].views}</li>
-                            <li class="info__famous">Famous: ${data[i].famous}</li>
-                        </ul>
-                        <a href="/beach/id?${data[i].id}" class="beach__link">Learn more</a>
-                      </div>`;
-
-    gallery.appendChild(card);
-  }
+  renderCards(gallery, data, startIndex, endIndex);
 };
 
 const updateStartEndIndex = (currentPage) => {
