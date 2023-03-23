@@ -7,7 +7,7 @@ import festivalsSection from "./Components/FestivalsSection.js";
 import subcribeSection from "./Components/SubcribeSection.js";
 import topListViewsSection from "./Components/TopViewsSection.js";
 import addEventScrollList from "../../../../DOM/addEventScrollList.js";
-import addHandleClickHeartIconOnCard from "./Services/addHandleClickHeartIconOnCard.js";
+import addHandleClickHomePage from "./Services/addHandleClickHomePage.js";
 
 const RenderHomePage = () => {
   const mainPageElement = document.getElementById("main-page");
@@ -22,7 +22,7 @@ const RenderHomePage = () => {
   mainPageElement.appendChild(topListViewsSection);
 
   addEventScrollList();
-  addHandleClickHeartIconOnCard();
+  addHandleClickHomePage();
 };
 
 export default RenderHomePage;

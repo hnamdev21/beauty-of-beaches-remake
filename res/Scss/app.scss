@@ -490,6 +490,12 @@ body {
         }
       }
 
+      .title--md {
+        padding-top: 40px;
+        text-align: center;
+      }
+
+      .festivals,
       .wrapper-cards {
         margin: 30px 0 20px;
         gap: 30px 20px;
@@ -536,8 +542,8 @@ body {
 
             .festival__name {
               text-align: center;
-              font-size: 18px;
-              font-weight: 450;
+              font-size: 16px;
+              font-weight: 550;
             }
 
             .festival__detail {

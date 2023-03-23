@@ -3,27 +3,19 @@ import { getFestivals } from "../../../../../Modules/GetData.js";
 const festivalsSection = document.createElement("section");
 festivalsSection.className = "festivals-section";
 
-festivalsSection.innerHTML = `<div class="inner relative">
-                                <div class="wrapper-title">
-                                    <h2 class="title--md">Upcoming festivals</h2>
-                                </div>
-
-                                <div class="wrapper-cards flex">
-                                    
-                                </div>
-
-                                <a href="#" class="view-btn">VIEW MORE</a>
+festivalsSection.innerHTML = `<div class="inner">
+                                <h1 class="title--md">Create your moment</h1>
+                                <div class="festivals flex"></div>
                               </div>`;
 
-const wrapperCards = festivalsSection.querySelector(".wrapper-cards");
-const maxItem = 4;
+const wrapperCards = festivalsSection.querySelector(".festivals");
 
 getFestivals().then((data) => {
-  for (let i = 0; i < maxItem; i++) {
+  data.forEach((festival) => {
     const card = document.createElement("div");
     card.classList = "card flex";
 
-    const startingTime = new Date(data[i].startingTime);
+    const startingTime = new Date(festival.startingTime);
     const currentTime = new Date();
     let distance = startingTime - currentTime;
 
@@ -37,18 +29,18 @@ getFestivals().then((data) => {
             <div class="card-image">
                   <a href="#">
                     <img
-                    src="${data[i].img}"
+                    src="${festival.img}"
                     alt=""
                     />
                   </a>
                   </div>
               </div>
               <div class="right-card flex flex-col">
-                <h4 class="festival__name">${data[i].name}</h4>
+                <h4 class="festival__name">${festival.name}</h4>
                 <div class="festival__detail">
-                  <div class="detail__location">Loaction: ${data[i].location}</div>
+                  <div class="detail__location">Loaction: ${festival.location}</div>
                     <p class="detail__desc">
-                      ${data[i].description}
+                      ${festival.description}
                     </p>
                   </div>
                     <div class="festival__countdown flex flex-align-center flex-space-between"></div>
@@ -79,7 +71,7 @@ getFestivals().then((data) => {
     }, 1000);
 
     wrapperCards.appendChild(card);
-  }
+  });
 });
 
 export default festivalsSection;

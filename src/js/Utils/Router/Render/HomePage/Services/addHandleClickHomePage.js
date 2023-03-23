@@ -105,7 +105,7 @@ const checkItemInSection = (favoriteName) => {
   });
 };
 
-const addHandleClickHeartIconOnCard = () => {
+const addHandleClickHomePage = () => {
   const topListSections = [...document.querySelectorAll(".top-list-section")];
   topListSections.forEach((topListSection) => {
     const cards = [...topListSection.querySelectorAll(".card")];
@@ -117,4 +117,4 @@ const addHandleClickHeartIconOnCard = () => {
   });
 };
 
-export default addHandleClickHeartIconOnCard;
+export default addHandleClickHomePage;
