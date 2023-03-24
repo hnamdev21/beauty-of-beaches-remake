@@ -8,7 +8,7 @@ contactSection.className = "contact-section";
 
 contactSection.innerHTML = `<div class="inner">
                                 <h1 class="title--md">Please leave your feedback</h1>
-                                <form action="" id="feedback-form" onsubmit="return false">
+                                <form action="#contact" method="POST" id="feedback-form" onsubmit="return false">
                                     <div class="wrapper-input wrapper-name flex">
                                     <div class="wrapper-input">
                                         <input type="text" name="firstname" id="firstname" required>

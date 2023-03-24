@@ -103,8 +103,8 @@ const checkItemInSection = (favoriteName) => {
   });
 };
 
-const addHandleClickGalleryPage = () => {
-  const gallery = document.querySelector(".gallery");
+const addHandleClickGalleryPage = (gallery) => {
+  // const gallery = document.querySelector(".gallery");
   const cards = [...gallery.querySelectorAll(".card")];
 
   cards.forEach((card) => {

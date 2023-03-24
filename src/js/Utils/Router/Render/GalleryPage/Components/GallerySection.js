@@ -3,6 +3,7 @@ import resetGallery from "../Services/resetGallery.js";
 import renderCards from "../Services/renderCards.js";
 import checkSearchInput from "../Services/checkSearchInput.js";
 import checkCheckboxInput from "../Services/checkCheckboxInput.js";
+import addHandleClickGalleryPage from "../Services/addHandleClickGalleryPage.js";
 
 const beachesPerPage = 12;
 let startIndex = 0;
@@ -124,6 +125,8 @@ searchInput.addEventListener("keyup", (e) => {
   } else {
     renderFiltered(gallery, filteredBeaches);
   }
+
+  addHandleClickGalleryPage(gallery);
 });
 
 checkboxInput.forEach((aElement) =>
@@ -143,6 +146,7 @@ checkboxInput.forEach((aElement) =>
 
 const renderBeaches = (data, startIndex, endIndex) => {
   renderCards(gallery, data, startIndex, endIndex);
+  addHandleClickGalleryPage(gallery);
 };
 
 const updateStartEndIndex = (currentPage) => {

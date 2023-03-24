@@ -1,9 +1,13 @@
 import festivalsSection from "./Components/FestivalsSection.js";
+import Push from "../Push.js";
+import heroSection from "../HeroSection.js";
 
 const RenderFestivalsPage = () => {
-  const mainPageElement = document.getElementById("main-page");
+  const mainPage = document.getElementById("main-page");
 
-  mainPageElement.appendChild(festivalsSection);
+  mainPage.appendChild(heroSection);
+  mainPage.appendChild(festivalsSection);
+  mainPage.appendChild(Push);
 };
 
 export default RenderFestivalsPage;

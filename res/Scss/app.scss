@@ -19,7 +19,6 @@
 body {
   position: relative;
   background-color: #f8fcff;
-  padding-bottom: 130px;
 }
 
 #header-page {
@@ -185,6 +184,9 @@ body {
 }
 
 #main-page {
+  min-height: 100vh;
+  margin-bottom: -68px;
+
   .hero-section {
     .wrapper-image {
       background: radial-gradient(#ffffff00, #00000066, #00000080),
@@ -483,7 +485,8 @@ body {
   }
 
   .festivals-section {
-    margin-top: 80px;
+    margin-top: 40px;
+    padding-bottom: 20px;
 
     .inner {
       .wrapper-title {
@@ -654,8 +657,8 @@ body {
 
   // Gallery Page
   .gallery-section {
-    margin-top: 150px;
-    padding-bottom: 30px;
+    margin-top: 40px;
+    padding-bottom: 40px;
 
     .title--md {
       text-align: center;
@@ -844,7 +847,9 @@ body {
 
   // Contact page
   .contact-section {
-    margin-top: 120px;
+    margin-top: 40px;
+    padding-bottom: 40px;
+
     .inner {
       .title--md {
         text-align: center;
@@ -1009,16 +1014,77 @@ body {
       }
     }
   }
+
+  // About page
+  .about-section {
+    margin-top: 40px;
+    padding-bottom: 60px;
+
+    .inner {
+      .title--md {
+        text-align: center;
+      }
+
+      .flex {
+        margin-top: 30px;
+
+        .card {
+          flex: 1;
+          max-width: 184px;
+          height: 300px;
+          border-radius: 5px;
+          background-color: #ffffff;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+          transition: all 0.3s linear;
+
+          &:last-child,
+          &:first-child {
+            margin-top: 40px;
+          }
+
+          &:hover {
+            transform: translateY(-20px);
+          }
+
+          .top-card {
+            width: 100%;
+            height: 120px;
+
+            .wrapper-image {
+              width: 120px;
+              height: 120px;
+              overflow: hidden;
+            }
+          }
+
+          .bot-card {
+            margin-top: 20px;
+
+            .member__position,
+            .member__name {
+              font-size: 16px;
+              font-weight: 400;
+              text-align: center;
+            }
+
+            .member__position {
+              font-size: 12px;
+            }
+
+            .member__tasks {
+              width: 100%;
+              padding: 0 20px;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 #footer-page {
   background-color: var(--earth);
   padding: 30px 0 20px;
-  margin-top: 40px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
 
   .inner {
     .designer,
@@ -1060,4 +1126,8 @@ body {
     transform: translate(0, 4px);
     box-shadow: 0 0 0 0;
   }
+}
+
+.push {
+  height: 58px;
 }

@@ -1,10 +1,14 @@
 import gallerySection from "./Components/GallerySection.js";
 import addHandleClickGalleryPage from "./Services/addHandleClickGalleryPage.js";
+import heroSection from "../HeroSection.js";
+import Push from "../Push.js";
 
 const RenderGalleryPage = () => {
-  const mainPageElement = document.getElementById("main-page");
+  const mainPage = document.getElementById("main-page");
 
-  mainPageElement.appendChild(gallerySection);
+  mainPage.appendChild(heroSection);
+  mainPage.appendChild(gallerySection);
+  mainPage.appendChild(Push);
 
   addHandleClickGalleryPage();
 };
