@@ -23,19 +23,23 @@ const validFromOnKeyup = (contactSection, idFields) => {
       const valueEle = e.target.value.trim();
       const parentEle = e.target.parentElement;
       const errorMsgElement = parentEle.querySelector(".error-msg");
-      let invalidErrorMsg = `Invalid ${id}`;
+      const invalidErrorMsg = "Invalid field";
 
       if (id === "firstname" || id === "lastname") {
         if (!regexName.test(valueEle)) {
           errorMsgElement.innerText = invalidErrorMsg;
+          element.classList.add("invalid");
         } else {
           errorMsgElement.innerText = "";
+          element.classList.remove("invalid");
         }
       } else if (id === "email") {
         if (!regexEmail.test(valueEle)) {
           errorMsgElement.innerText = invalidErrorMsg;
+          element.classList.add("invalid");
         } else {
           errorMsgElement.innerText = "";
+          element.classList.remove("invalid");
         }
       } else if (id === "feedback") {
         const words = valueEle.split(" ");
@@ -51,6 +55,10 @@ const validFromOnKeyup = (contactSection, idFields) => {
 
         if (countBadWord > 0) {
           errorMsgElement.innerText = badWordError;
+          element.classList.add("invalid");
+        } else {
+          errorMsgElement.innerText = "";
+          element.classList.remove("invalid");
         }
       }
     });
