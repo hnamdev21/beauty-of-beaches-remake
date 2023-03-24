@@ -28,14 +28,12 @@ const validFromOnKeyup = (contactSection, idFields) => {
       if (id === "firstname" || id === "lastname") {
         if (!regexName.test(valueEle)) {
           errorMsgElement.innerText = invalidErrorMsg;
-          countInvalid++;
         } else {
           errorMsgElement.innerText = "";
         }
       } else if (id === "email") {
         if (!regexEmail.test(valueEle)) {
           errorMsgElement.innerText = invalidErrorMsg;
-          countInvalid++;
         } else {
           errorMsgElement.innerText = "";
         }

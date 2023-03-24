@@ -621,7 +621,7 @@ body {
         #main-page .contact-section .inner #feedback-form .wrapper-input textarea ~ label {
           top: 5px !important; }
     #main-page .contact-section .inner #feedback-form .wrapper-file-input {
-      margin: 10px auto 0;
+      margin: 25px auto 0;
       height: 30px;
       width: 200px;
       background-color: var(--light-blue); }
