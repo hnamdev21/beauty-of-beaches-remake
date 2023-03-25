@@ -3,6 +3,7 @@ import RenderGalleryPage from "./Render/GalleryPage/RenderGalleryPage.js";
 import RenderFestivalsPage from "./Render/FestivalsPage/RenderFestivalsPage.js";
 import RenderAboutPage from "./Render/AboutPage/RenderAboutPage.js";
 import RenderContactPage from "./Render/ContactPage/RenderContactPage.js";
+import RenderBeachDetailPage from "./Render/BeachDetailPage/RenderBeachDetailPage.js";
 
 const resetMainPage = () => {
   const mainPage = document.getElementById("main-page");
@@ -10,11 +11,14 @@ const resetMainPage = () => {
   mainPage.innerHTML = ``;
 };
 
-const Router = (path) => {
+const Router = (APP_URL) => {
+  const APP_PATH = APP_URL.hash.slice(1).split("/");
+  const APP_MAINPATH = APP_PATH[0];
+
   let websiteTitle = "";
   resetMainPage();
 
-  switch (path) {
+  switch (APP_MAINPATH) {
     case "home":
       RenderHomePage();
       websiteTitle = `Beachour | Home`;
@@ -28,15 +32,29 @@ const Router = (path) => {
       break;
 
     case "gallery":
-      RenderGalleryPage();
       websiteTitle = `Beachour | Gallery`;
 
+      if (APP_PATH.length > 1) {
+        const APP_QUERYDETAIL = APP_PATH[2];
+
+        resetMainPage();
+        RenderBeachDetailPage(APP_QUERYDETAIL);
+      } else {
+        RenderGalleryPage();
+      }
       break;
 
     case "festivals":
-      RenderFestivalsPage();
       websiteTitle = `Beachour | Festivals`;
 
+      if (APP_PATH.length > 1) {
+        const APP_QUERYDETAIL = APP_PATH[2];
+
+        resetMainPage();
+        RenderFestivalDetailPage(APP_QUERYDETAIL);
+      } else {
+        RenderFestivalsPage();
+      }
       break;
 
     case "contact":

@@ -1080,6 +1080,39 @@ body {
       }
     }
   }
+
+  // Beach detail page
+  .beach-detail-section {
+    margin-top: 40px;
+
+    .title--md {
+      text-align: center;
+    }
+
+    .wrapper-main-image {
+      height: 400px;
+      margin: 20px 0;
+    }
+
+    .wrapper-info {
+      padding: 20px 0 40px;
+      column-gap: 20px;
+
+      .wrapper-sub-image {
+        flex: 2;
+        max-width: 400px;
+      }
+
+      .wrapper-description {
+        flex: 1;
+
+        p {
+          text-indent: 40px;
+          text-align: justify;
+        }
+      }
+    }
+  }
 }
 
 #footer-page {

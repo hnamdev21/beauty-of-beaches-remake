@@ -685,6 +685,24 @@ body {
           #main-page .about-section .inner .flex .card .bot-card .member__tasks {
             width: 100%;
             padding: 0 20px; }
+  #main-page .beach-detail-section {
+    margin-top: 40px; }
+    #main-page .beach-detail-section .title--md {
+      text-align: center; }
+    #main-page .beach-detail-section .wrapper-main-image {
+      height: 400px;
+      margin: 20px 0; }
+    #main-page .beach-detail-section .wrapper-info {
+      padding: 20px 0 40px;
+      column-gap: 20px; }
+      #main-page .beach-detail-section .wrapper-info .wrapper-sub-image {
+        flex: 2;
+        max-width: 400px; }
+      #main-page .beach-detail-section .wrapper-info .wrapper-description {
+        flex: 1; }
+        #main-page .beach-detail-section .wrapper-info .wrapper-description p {
+          text-indent: 40px;
+          text-align: justify; }
 
 #footer-page {
   background-color: var(--earth);
