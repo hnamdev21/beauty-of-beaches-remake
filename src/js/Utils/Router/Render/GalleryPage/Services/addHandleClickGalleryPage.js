@@ -104,7 +104,6 @@ const checkItemInSection = (favoriteName) => {
 };
 
 const addHandleClickGalleryPage = (gallery) => {
-  // const gallery = document.querySelector(".gallery");
   const cards = [...gallery.querySelectorAll(".card")];
 
   cards.forEach((card) => {

@@ -4,6 +4,7 @@ import renderCards from "../Services/renderCards.js";
 import checkSearchInput from "../Services/checkSearchInput.js";
 import checkCheckboxInput from "../Services/checkCheckboxInput.js";
 import addHandleClickGalleryPage from "../Services/addHandleClickGalleryPage.js";
+import checkAndFillHeartIcon from "../../../../checkAndFillHeartIcon.js";
 
 const beachesPerPage = 12;
 let startIndex = 0;
@@ -147,6 +148,7 @@ checkboxInput.forEach((aElement) =>
 const renderBeaches = (data, startIndex, endIndex) => {
   renderCards(gallery, data, startIndex, endIndex);
   addHandleClickGalleryPage(gallery);
+  checkAndFillHeartIcon(gallerySection);
 };
 
 const updateStartEndIndex = (currentPage) => {

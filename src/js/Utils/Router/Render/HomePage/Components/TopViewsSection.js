@@ -1,9 +1,9 @@
 import { getBeaches } from "../../../../../Modules/GetData.js";
 
-const topListViewsSection = document.createElement("section");
-topListViewsSection.className = "top-list-section top-10-views";
+const topViewsSection = document.createElement("section");
+topViewsSection.className = "top-list-section top-10-views";
 
-topListViewsSection.innerHTML = `<div class="inner relative">
+topViewsSection.innerHTML = `<div class="inner relative">
                                     <h4 class="list-title">Top 10 views beaches</h4>
 
                                     <div class="wrapper-btns">
@@ -20,7 +20,7 @@ topListViewsSection.innerHTML = `<div class="inner relative">
                                     </div>
                                 </div>`;
 
-const wrapperCards = topListViewsSection.querySelector(".wrapper-cards");
+const wrapperCards = topViewsSection.querySelector(".wrapper-cards");
 const maxItem = 10;
 
 async function sortData() {
@@ -76,4 +76,4 @@ sortData().then((sortedBeaches) => {
   }
 });
 
-export default topListViewsSection;
+export default topViewsSection;
