@@ -67,7 +67,7 @@ sortData().then((sortedBeaches) => {
                     <li class="info__views">Views: ${sortedBeaches[i].views}</li>
                     <li class="info__famous">Famous: ${sortedBeaches[i].famous}</li>
                   </ul>
-                  <a href="/beach/id?${sortedBeaches[i].id}" class="beach__link">Learn more</a>
+                  <a href="#gallery/beach/${sortedBeaches[i].id}" class="beach__link">Learn more</a>
                 </div>
         `;
 

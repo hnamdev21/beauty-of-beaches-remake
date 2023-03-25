@@ -703,6 +703,21 @@ body {
         #main-page .beach-detail-section .wrapper-info .wrapper-description p {
           text-indent: 40px;
           text-align: justify; }
+  #main-page .festival-detail-section {
+    margin-top: 40px;
+    padding-bottom: 40px; }
+    #main-page .festival-detail-section .inner .title--md {
+      text-align: center; }
+    #main-page .festival-detail-section .inner .wrapper-info .festival__countdown {
+      margin: 20px 0; }
+      #main-page .festival-detail-section .inner .wrapper-info .festival__countdown span {
+        display: block;
+        text-align: center;
+        font-size: 30px; }
+    #main-page .festival-detail-section .inner .wrapper-info p {
+      text-align: justify; }
+    #main-page .festival-detail-section .inner .wrapper-info .festival__description {
+      margin: 5px 0 20px; }
 
 #footer-page {
   background-color: var(--earth);

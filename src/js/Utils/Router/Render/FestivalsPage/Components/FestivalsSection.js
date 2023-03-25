@@ -24,10 +24,13 @@ getFestivals().then((data) => {
     let minutes = Math.floor(distance / (60 * 1000)) % 60;
     let seconds = Math.floor(distance / 1000) % 60;
 
+    const nameFes = festival.name.toLowerCase();
+    const nameLink = nameFes.replaceAll(" ", "-");
+
     card.innerHTML = `
             <div class="left-card">
             <div class="card-image">
-                  <a href="#">
+                  <a href="#festivals/${nameLink}">
                     <img
                     src="${festival.img}"
                     alt=""

@@ -1,4 +1,4 @@
-import { getBeachesById } from "../../../../../Modules/GetDataById.js";
+import { getBeachesById } from "../../../../../Modules/GetDataByQuery.js";
 
 const beachDetailSection = document.createElement("section");
 beachDetailSection.className = "beach-detail-section";

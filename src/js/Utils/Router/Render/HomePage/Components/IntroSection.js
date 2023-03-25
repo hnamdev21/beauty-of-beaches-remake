@@ -8,7 +8,7 @@ introSection.innerHTML = `<div class="inner">
                                     <br />
                                     Let's choose your peace
                                     </h1>
-                                    <a href="#" class="view-btn">VIEW</a>
+                                    <a href="#gallery" class="view-btn">VIEW</a>
                                 </div>
 
                                 <div class="wrapper-cards flex">

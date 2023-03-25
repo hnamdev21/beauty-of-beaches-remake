@@ -1113,6 +1113,38 @@ body {
       }
     }
   }
+
+  // Festival detail page
+  .festival-detail-section {
+    margin-top: 40px;
+    padding-bottom: 40px;
+
+    .inner {
+      .title--md {
+        text-align: center;
+      }
+
+      .wrapper-info {
+        .festival__countdown {
+          margin: 20px 0;
+
+          span {
+            display: block;
+            text-align: center;
+            font-size: 30px;
+          }
+        }
+
+        p {
+          text-align: justify;
+        }
+
+        .festival__description {
+          margin: 5px 0 20px;
+        }
+      }
+    }
+  }
 }
 
 #footer-page {

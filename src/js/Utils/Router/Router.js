@@ -4,6 +4,7 @@ import RenderFestivalsPage from "./Render/FestivalsPage/RenderFestivalsPage.js";
 import RenderAboutPage from "./Render/AboutPage/RenderAboutPage.js";
 import RenderContactPage from "./Render/ContactPage/RenderContactPage.js";
 import RenderBeachDetailPage from "./Render/BeachDetailPage/RenderBeachDetailPage.js";
+import RenderFestivalDetailPage from "./Render/FestivalDetailPage/RenderFestivalDetailPage.js";
 
 const resetMainPage = () => {
   const mainPage = document.getElementById("main-page");
@@ -48,7 +49,7 @@ const Router = (APP_URL) => {
       websiteTitle = `Beachour | Festivals`;
 
       if (APP_PATH.length > 1) {
-        const APP_QUERYDETAIL = APP_PATH[2];
+        const APP_QUERYDETAIL = APP_PATH[1];
 
         resetMainPage();
         RenderFestivalDetailPage(APP_QUERYDETAIL);

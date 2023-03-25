@@ -11,12 +11,12 @@ const getBeachesById = async (queryId) => {
   return beachDetail;
 };
 
-const getFestivalsById = async (queryId) => {
+const getFestivalByName = async (queryName) => {
   let response = await fetch("res/Data/festivals.json");
   let data = await response.json();
 
   const festivalDetail = data.find((festival) => {
-    if (festival.id == queryId) {
+    if (festival.name == queryName) {
       return festival;
     }
   });
@@ -24,4 +24,4 @@ const getFestivalsById = async (queryId) => {
   return festivalDetail;
 };
 
-export { getBeachesById, getFestivalsById };
+export { getBeachesById, getFestivalByName };

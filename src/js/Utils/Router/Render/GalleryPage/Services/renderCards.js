@@ -22,7 +22,7 @@ const renderCards = (wrapperElement, data, startIndex, endIndex) => {
                             <li class="info__views">Views: ${data[i].views}</li>
                             <li class="info__famous">Famous: ${data[i].famous}</li>
                         </ul>
-                        <a href="/beach/id?${data[i].id}" class="beach__link">Learn more</a>
+                        <a href="#gallery/beach/${data[i].id}" class="beach__link">Learn more</a>
                       </div>`;
 
     wrapperElement.appendChild(card);

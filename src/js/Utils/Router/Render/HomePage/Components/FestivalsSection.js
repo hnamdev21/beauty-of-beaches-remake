@@ -12,7 +12,7 @@ festivalsSection.innerHTML = `<div class="inner relative">
                                     
                                 </div>
 
-                                <a href="#" class="view-btn">VIEW MORE</a>
+                                <a href="#festivals" class="view-btn">VIEW MORE</a>
                               </div>`;
 
 const wrapperCards = festivalsSection.querySelector(".wrapper-cards");
@@ -32,10 +32,13 @@ getFestivals().then((data) => {
     let minutes = Math.floor(distance / (60 * 1000)) % 60;
     let seconds = Math.floor(distance / 1000) % 60;
 
+    const nameFes = data[i].name.toLowerCase();
+    const nameLink = nameFes.replaceAll(" ", "-");
+
     card.innerHTML = `
             <div class="left-card">
             <div class="card-image">
-                  <a href="#">
+                  <a href="#festivals/${nameLink}">
                     <img
                     src="${data[i].img}"
                     alt=""
