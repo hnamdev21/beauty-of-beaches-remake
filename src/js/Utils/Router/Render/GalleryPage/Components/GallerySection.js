@@ -5,6 +5,7 @@ import checkSearchInput from "../Services/checkSearchInput.js";
 import checkCheckboxInput from "../Services/checkCheckboxInput.js";
 import addHandleClickGalleryPage from "../Services/addHandleClickGalleryPage.js";
 import checkAndFillHeartIcon from "../../../../checkAndFillHeartIcon.js";
+import addActivePagination from "../Services/addActivePagination.js";
 
 const beachesPerPage = 12;
 let startIndex = 0;
@@ -169,6 +170,7 @@ const renderPagination = (totalPages) => {
 
       currentPage = i;
 
+      addActivePagination(aElement, pagination);
       updateStartEndIndex(currentPage);
       resetGallery();
       getBeaches().then((data) => renderBeaches(data, startIndex, endIndex));
@@ -176,6 +178,9 @@ const renderPagination = (totalPages) => {
 
     pagination.appendChild(paginationLi);
   }
+
+  const aElements = [...pagination.querySelectorAll("a")];
+  aElements[0].parentElement.classList.add("active");
 };
 
 getBeaches().then((data) => {

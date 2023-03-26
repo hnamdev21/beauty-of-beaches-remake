@@ -595,6 +595,8 @@ body {
           padding: 10px;
           border: none;
           box-shadow: 0px 4px 10px 0 rgba(0, 0, 0, 0.4); }
+          #main-page .contact-section .inner #feedback-form .wrapper-input input.invalid {
+            border: 0.5px solid var(--light-red); }
           #main-page .contact-section .inner #feedback-form .wrapper-input input:valid, #main-page .contact-section .inner #feedback-form .wrapper-input input:focus {
             outline: none; }
             #main-page .contact-section .inner #feedback-form .wrapper-input input:valid ~ label, #main-page .contact-section .inner #feedback-form .wrapper-input input:focus ~ label {
@@ -608,6 +610,8 @@ body {
           padding: 10px;
           border: none;
           box-shadow: 0px 1px 10px 0 rgba(0, 0, 0, 0.4); }
+          #main-page .contact-section .inner #feedback-form .wrapper-input textarea.invalid {
+            border: 0.5px solid var(--light-red); }
           #main-page .contact-section .inner #feedback-form .wrapper-input textarea:valid, #main-page .contact-section .inner #feedback-form .wrapper-input textarea:focus {
             outline: none; }
             #main-page .contact-section .inner #feedback-form .wrapper-input textarea:valid ~ label, #main-page .contact-section .inner #feedback-form .wrapper-input textarea:focus ~ label {

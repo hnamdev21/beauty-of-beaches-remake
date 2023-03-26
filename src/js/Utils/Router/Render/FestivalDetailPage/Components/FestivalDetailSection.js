@@ -1,4 +1,4 @@
-import { getFestivalByName } from "../../../../../Modules/GetDataByQuery.js";
+import { getFestivalByName } from "../../../../../Modules/GetDataByQuerying.js";
 
 const festivalDetailSection = document.createElement("section");
 festivalDetailSection.className = "festival-detail-section";

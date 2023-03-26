@@ -10,6 +10,7 @@ import addEventScrollList from "../../../../DOM/addEventScrollList.js";
 import addHandleClickHomePage from "./Services/addHandleClickHomePage.js";
 import Push from "../Push.js";
 import checkAndFillHearticon from "../../../checkAndFillHeartIcon.js";
+import updateNewData from "./Services/updateNewData.js";
 
 const RenderHomePage = () => {
   const mainPage = document.getElementById("main-page");
@@ -28,6 +29,7 @@ const RenderHomePage = () => {
   addHandleClickHomePage();
   checkAndFillHearticon(topFamousSection);
   checkAndFillHearticon(topViewsSection);
+  updateNewData(feedbackSection.querySelector(".wrapper-cards"));
 };
 
 export default RenderHomePage;

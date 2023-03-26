@@ -2,13 +2,16 @@ import { checkRequiredOnBlur } from "../Services/checkRequired.js";
 import { validFromOnKeyup } from "../Services/validForm.js";
 import autoCapitalizeFirstLetter from "../Services/autoCapitalizeFirstLetter.js";
 import covertImage from "../Services/convertImage.js";
+import getInfoFeedback from "../Services/getInfoFeedback.js";
+
+const idFields = ["firstname", "lastname", "email", "feedback"];
 
 const contactSection = document.createElement("section");
 contactSection.className = "contact-section";
 
 contactSection.innerHTML = `<div class="inner">
                                 <h1 class="title--md">Please leave your feedback</h1>
-                                <form action="#contact" method="POST" id="feedback-form" onsubmit="return false">
+                                <form id="feedback-form" onSubmit="return false">
                                     <div class="wrapper-input wrapper-name flex">
                                     <div class="wrapper-input">
                                         <input type="text" name="firstname" id="firstname" required>
@@ -47,13 +50,14 @@ contactSection.innerHTML = `<div class="inner">
                                     </div>
                                 </form>
                             </div>`;
-// const submitBtn = contactSection.querySelector(`input[type="submit"]`);
-// submitBtn.addEventListener("click", (e) => {
-//   e.preventDefault();
-//   validFormOnSubmit(contactSection);
-// });
 
-const idFields = ["firstname", "lastname", "email", "feedback"];
+const submitButton = contactSection.querySelector(`input[type="submit"]`);
+submitButton.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  getInfoFeedback(contactSection, idFields);
+});
+
 checkRequiredOnBlur(contactSection, idFields);
 validFromOnKeyup(contactSection, idFields);
 autoCapitalizeFirstLetter(contactSection.querySelector("#firstname"));
