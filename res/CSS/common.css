@@ -22,7 +22,7 @@
 }
 
 .inner {
-  width: min(100% - 40px, 1200px);
+  width: min(100% - 60px, 1200px);
   margin: 0 auto;
 }
 

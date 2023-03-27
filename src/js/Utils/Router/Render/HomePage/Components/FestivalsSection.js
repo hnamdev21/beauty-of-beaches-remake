@@ -8,7 +8,7 @@ festivalsSection.innerHTML = `<div class="inner relative">
                                     <h2 class="title--md">Upcoming festivals</h2>
                                 </div>
 
-                                <div class="wrapper-cards flex">
+                                <div class="wrapper-cards flex flex-space-between">
                                     
                                 </div>
 

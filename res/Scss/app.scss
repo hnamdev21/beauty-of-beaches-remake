@@ -1,3 +1,5 @@
+@import "./_mixin.scss";
+
 // Force functions
 @function css-function($function, $values...) {
   @return $function + unquote("(") + $values + unquote(")");
@@ -63,6 +65,10 @@ body {
     .wrapper-nav {
       column-gap: 36px;
 
+      @include respond(phone) {
+        column-gap: 12px;
+      }
+
       .nav-link {
         a {
           position: relative;
@@ -70,6 +76,11 @@ body {
           font-weight: 500;
           padding: 8px 10px;
           transition: all 0.2s linear;
+
+          @include respond(phone) {
+            font-size: 14px;
+            padding: 8px 10px;
+          }
 
           &.active {
             &::before {
@@ -93,6 +104,10 @@ body {
       color: var(--light-red);
       font-size: 25px;
       transition: all 0.3s linear;
+
+      @include respond(phone) {
+        margin-left: 12px;
+      }
 
       i {
         cursor: pointer;
@@ -196,15 +211,37 @@ body {
       width: 100%;
       height: 500px;
     }
+
+    @include respond(tablet) {
+      height: 400px;
+    }
+
+    @include respond(phone) {
+      height: 300px;
+    }
   }
 
   .intro-section {
     margin: 40px 0;
 
+    @include respond(tablet) {
+      margin: 120px 0 40px;
+    }
+
+    @include respond(phone) {
+      margin: 220px 0 0;
+    }
+
     .inner {
       .wrapper-title {
         margin: 0 auto 30px;
         width: css-min(calc(100% - 40px), 838px);
+
+        @include respond(tablet) {
+          .title--large {
+            font-size: 30px;
+          }
+        }
       }
 
       .wrapper-cards {
@@ -229,6 +266,10 @@ body {
           &:not(:hover) {
             opacity: 0.5;
           }
+
+          @include respond(phone) {
+            height: 250px;
+          }
         }
       }
     }
@@ -237,9 +278,14 @@ body {
   .breadcrumb-section {
     margin-top: 80px;
 
+    @include respond(phone) {
+      margin-top: 40px;
+    }
+
     .inner {
       .breadcrumb-list {
         column-gap: 10px;
+
         .breadcrumb-link {
           &:not(:last-child) {
             &::after {
@@ -253,6 +299,10 @@ body {
           a {
             color: #ccc;
             transition: all 0.2s linear;
+
+            @include respond(phone) {
+              font-size: 14px;
+            }
 
             &.active {
               color: #000000;
@@ -272,14 +322,27 @@ body {
     margin-top: 30px;
     padding-bottom: 30px;
 
+    @include respond(tablet) {
+      margin-top: 20px;
+      padding-bottom: 20px;
+    }
+
     &.top-10-views {
       margin-top: 80px;
+
+      @include respond(tablet) {
+        margin-top: 40px;
+      }
     }
 
     .inner {
       .list-title {
         font-size: 16px;
         font-weight: 400;
+
+        @include respond(phone) {
+          font-size: 14px;
+        }
       }
 
       .wrapper-btns {
@@ -299,6 +362,10 @@ body {
         .right-btn {
           left: unset;
           right: -40px;
+        }
+
+        @include respond(tablet) {
+          display: none;
         }
       }
 
@@ -401,13 +468,11 @@ body {
   .latest-feedback-section {
     margin-top: 30px;
 
-    .inner {
-      .wrapper-title {
-        .title--md {
-          text-align: center;
-        }
-      }
+    @include respond(tablet) {
+      margin-top: 10px;
+    }
 
+    .inner {
       .mask {
         margin-top: 10px;
         height: 220px;
@@ -488,23 +553,28 @@ body {
     margin-top: 40px;
     padding-bottom: 20px;
 
+    &.festivals-page {
+      @include respond(tablet) {
+        margin-top: 120px;
+      }
+
+      @include respond(phone) {
+        margin-top: 220px;
+      }
+    }
+
     .inner {
-      .wrapper-title {
-        .title--md {
-          text-align: center;
-        }
-      }
-
-      .title--md {
-        padding-top: 40px;
-        text-align: center;
-      }
-
       .festivals,
       .wrapper-cards {
         margin: 30px 0 20px;
         gap: 30px 20px;
         flex-wrap: wrap;
+
+        @include respond(phone) {
+          gap: unset;
+          row-gap: 30px;
+          justify-content: space-between;
+        }
 
         .card {
           flex: 1;
@@ -515,12 +585,27 @@ body {
           background-color: #ffffff;
           box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.5);
 
+          @include respond(tablet) {
+            max-width: 540px;
+            min-width: 540px;
+          }
+
+          @include respond(phone) {
+            max-width: 340px;
+            min-width: 340px;
+            height: 220px;
+          }
+
           .left-card {
             flex: 1;
             max-width: 250px;
             height: 100%;
             border-radius: 15px 0 0 15px;
             overflow: hidden;
+
+            @include respond(phone) {
+              max-width: 140px;
+            }
 
             &:hover {
               .card-image {
@@ -545,29 +630,58 @@ body {
             padding: 20px;
             border-radius: 0 15px 15px 0;
 
+            @include respond(phone) {
+              max-width: 200px;
+              row-gap: 10px;
+              padding: 10px;
+            }
+
             .festival__name {
               text-align: center;
               font-size: 16px;
               font-weight: 550;
+
+              @include respond(phone) {
+                font-size: 12px;
+              }
             }
 
             .festival__detail {
+              .detail__location {
+                @include respond(phone) {
+                  font-size: 12px;
+                }
+              }
+
               .detail__desc {
                 margin-top: 10px;
                 display: -webkit-box;
                 overflow: hidden;
                 -webkit-box-orient: vertical;
                 -webkit-line-clamp: 3;
+
+                @include respond(phone) {
+                  font-size: 12px;
+                  -webkit-line-clamp: 4;
+                }
               }
             }
 
             .festival__countdown {
               margin-top: auto;
 
+              @include respond(phone) {
+                font-size: 12px;
+              }
+
               span {
                 display: block;
                 text-align: center;
                 font-size: 30px;
+
+                @include respond(phone) {
+                  font-size: 16px;
+                }
               }
             }
           }
@@ -579,6 +693,10 @@ body {
         left: 50%;
         right: unset;
         transform: translate(-50%, 150%);
+
+        @include respond(tablet) {
+          bottom: -20px;
+        }
       }
     }
   }
@@ -588,12 +706,23 @@ body {
     padding: 30px 0;
     background-color: var(--md-blue);
 
+    @include respond(tablet) {
+      margin-top: 100px;
+    }
+
+    @include respond(phone) {
+      margin-top: 80px;
+    }
+
     .inner {
       column-gap: 20px;
 
       .wrapper-content {
         flex: 1;
         max-width: 430px;
+        @include respond(phone) {
+          max-width: 300px;
+        }
 
         &::before {
           content: "";
@@ -604,12 +733,20 @@ body {
           width: 1px;
           height: 100%;
           background-color: #ffffff;
+
+          @include respond(phone) {
+            right: 15px;
+          }
         }
 
         .title {
           font-size: 30px;
           font-weight: 400;
           color: #ffffff;
+
+          @include respond(phone) {
+            font-size: 20px;
+          }
         }
 
         .subcribe-form {
@@ -619,12 +756,21 @@ body {
             border-radius: 5px;
             font-size: 18px;
 
+            @include respond(phone) {
+              padding: 6px 9px;
+              font-size: 14px;
+            }
+
             &:focus {
               outline: none;
             }
 
             &::placeholder {
               font-size: 18px;
+
+              @include respond(phone) {
+                font-size: 14px;
+              }
             }
           }
 
@@ -635,6 +781,11 @@ body {
             color: #ffffff;
             font-size: 20px;
             cursor: pointer;
+
+            @include respond(phone) {
+              padding: 6px 10px;
+              font-size: 14px;
+            }
           }
         }
       }
@@ -660,13 +811,21 @@ body {
     margin-top: 40px;
     padding-bottom: 40px;
 
-    .title--md {
-      text-align: center;
+    @include respond(tablet) {
+      margin-top: 150px;
+    }
+
+    @include respond(phone) {
+      margin-top: 220px;
     }
 
     .inner {
       margin-top: 30px;
       column-gap: 20px;
+
+      @include respond(tablet) {
+        margin-top: 20px;
+      }
 
       .side-bar {
         flex: 1;
@@ -682,12 +841,22 @@ body {
           h4 {
             font-size: 16px;
             font-weight: 550;
+
+            @include respond(phone) {
+              font-size: 14px;
+            }
           }
 
           .flex {
             margin-top: 5px;
             flex-wrap: wrap;
             gap: 5px 10px;
+          }
+
+          label {
+            @include respond(phone) {
+              font-size: 12px;
+            }
           }
         }
 
@@ -715,12 +884,20 @@ body {
             box-shadow: 0 1px 15px 0 rgba(0, 0, 0, 0.4);
             font-size: 18px;
 
+            @include respond(phone) {
+              font-size: 14px;
+            }
+
             &:focus {
               outline: none;
             }
 
             &::placeholder {
               font-size: 16px;
+
+              @include respond(phone) {
+                font-size: 14px;
+              }
             }
           }
         }
@@ -730,6 +907,14 @@ body {
           gap: 20px;
           flex-wrap: wrap;
 
+          @include respond(tablet) {
+            justify-content: space-between;
+          }
+          @include respond(phone) {
+            gap: 10px;
+            justify-content: space-between;
+          }
+
           .card {
             height: 350px;
             width: 285px;
@@ -738,6 +923,15 @@ body {
             border: 0.5px solid #000000;
             overflow: hidden;
             transition: all 0.3s linear;
+
+            @include respond(tablet) {
+              width: 260px;
+            }
+
+            @include respond(phone) {
+              width: 210px;
+              height: 260px;
+            }
 
             .top-card {
               width: 100%;
@@ -850,11 +1044,15 @@ body {
     margin-top: 40px;
     padding-bottom: 40px;
 
-    .inner {
-      .title--md {
-        text-align: center;
-      }
+    @include respond(tablet) {
+      margin-top: 150px;
+    }
 
+    @include respond(phone) {
+      margin-top: 220px;
+    }
+
+    .inner {
       #feedback-form {
         width: 400px;
         margin: 0 auto;
@@ -1028,11 +1226,15 @@ body {
     margin-top: 40px;
     padding-bottom: 60px;
 
-    .inner {
-      .title--md {
-        text-align: center;
-      }
+    @include respond(tablet) {
+      margin-top: 150px;
+    }
 
+    @include respond(phone) {
+      margin-top: 220px;
+    }
+
+    .inner {
       .flex {
         margin-top: 30px;
 
@@ -1093,8 +1295,12 @@ body {
   .beach-detail-section {
     margin-top: 40px;
 
-    .title--md {
-      text-align: center;
+    @include respond(tablet) {
+      margin-top: 150px;
+    }
+
+    @include respond(phone) {
+      margin-top: 220px;
     }
 
     .wrapper-main-image {
@@ -1127,11 +1333,15 @@ body {
     margin-top: 40px;
     padding-bottom: 40px;
 
-    .inner {
-      .title--md {
-        text-align: center;
-      }
+    @include respond(tablet) {
+      margin-top: 150px;
+    }
 
+    @include respond(phone) {
+      margin-top: 220px;
+    }
+
+    .inner {
       .wrapper-info {
         .festival__countdown {
           margin: 20px 0;
@@ -1149,6 +1359,12 @@ body {
 
         .festival__description {
           margin: 5px 0 20px;
+        }
+
+        .wrapper-image {
+          @include respond(tablet) {
+            height: 500px;
+          }
         }
       }
     }
@@ -1175,6 +1391,10 @@ body {
       width: 70%;
       height: 1px;
       background-color: #ffffff;
+
+      @include respond(phone) {
+        width: 50%;
+      }
     }
   }
 }
@@ -1199,8 +1419,30 @@ body {
     transform: translate(0, 4px);
     box-shadow: 0 0 0 0;
   }
+
+  @include respond(tablet) {
+    right: 120px;
+    padding: 4px 20px;
+    font-size: 16px;
+  }
+
+  @include respond(phone) {
+    right: 60px;
+  }
 }
 
 .push {
-  height: 58px;
+  height: 68px;
+}
+
+.title--md {
+  text-align: center;
+
+  @include respond(tablet) {
+    font-size: 25px;
+  }
+
+  @include respond(phone) {
+    font-size: 18px;
+  }
 }

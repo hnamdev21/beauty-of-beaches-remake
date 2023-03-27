@@ -1,7 +1,7 @@
 import { getFestivals } from "../../../../../Modules/GetData.js";
 
 const festivalsSection = document.createElement("section");
-festivalsSection.className = "festivals-section";
+festivalsSection.className = "festivals-section festivals-page";
 
 festivalsSection.innerHTML = `<div class="inner">
                                 <h1 class="title--md">Create your moment</h1>

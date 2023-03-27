@@ -29,12 +29,19 @@ body {
       max-width: 200px; }
     #header-page .inner .wrapper-nav {
       column-gap: 36px; }
+      @media screen and (max-width: 767px) {
+        #header-page .inner .wrapper-nav {
+          column-gap: 12px; } }
       #header-page .inner .wrapper-nav .nav-link a {
         position: relative;
         color: #f5f5f5;
         font-weight: 500;
         padding: 8px 10px;
         transition: all 0.2s linear; }
+        @media screen and (max-width: 767px) {
+          #header-page .inner .wrapper-nav .nav-link a {
+            font-size: 14px;
+            padding: 8px 10px; } }
         #header-page .inner .wrapper-nav .nav-link a.active::before {
           content: "";
           position: absolute;
@@ -50,6 +57,9 @@ body {
       color: var(--light-red);
       font-size: 25px;
       transition: all 0.3s linear; }
+      @media screen and (max-width: 767px) {
+        #header-page .inner .wrapper-other-opt {
+          margin-left: 12px; } }
       #header-page .inner .wrapper-other-opt i {
         cursor: pointer; }
       #header-page .inner .wrapper-other-opt:hover {
@@ -122,11 +132,26 @@ body {
     background-size: cover;
     width: 100%;
     height: 500px; }
+  @media screen and (max-width: 1199px) {
+    #main-page .hero-section {
+      height: 400px; } }
+  @media screen and (max-width: 767px) {
+    #main-page .hero-section {
+      height: 300px; } }
   #main-page .intro-section {
     margin: 40px 0; }
+    @media screen and (max-width: 1199px) {
+      #main-page .intro-section {
+        margin: 120px 0 40px; } }
+    @media screen and (max-width: 767px) {
+      #main-page .intro-section {
+        margin: 220px 0 0; } }
     #main-page .intro-section .inner .wrapper-title {
       margin: 0 auto 30px;
       width: min(calc(100% - 40px), 838px); }
+      @media screen and (max-width: 1199px) {
+        #main-page .intro-section .inner .wrapper-title .title--large {
+          font-size: 30px; } }
     #main-page .intro-section .inner .wrapper-cards {
       margin: 0 auto 30px;
       width: min(calc(100% - 40px), 838px);
@@ -144,8 +169,14 @@ body {
           opacity: 1; }
         #main-page .intro-section .inner .wrapper-cards .card:not(:hover) {
           opacity: 0.5; }
+        @media screen and (max-width: 767px) {
+          #main-page .intro-section .inner .wrapper-cards .card {
+            height: 250px; } }
   #main-page .breadcrumb-section {
     margin-top: 80px; }
+    @media screen and (max-width: 767px) {
+      #main-page .breadcrumb-section {
+        margin-top: 40px; } }
     #main-page .breadcrumb-section .inner .breadcrumb-list {
       column-gap: 10px; }
       #main-page .breadcrumb-section .inner .breadcrumb-list .breadcrumb-link:not(:last-child)::after {
@@ -156,6 +187,9 @@ body {
       #main-page .breadcrumb-section .inner .breadcrumb-list .breadcrumb-link a {
         color: #ccc;
         transition: all 0.2s linear; }
+        @media screen and (max-width: 767px) {
+          #main-page .breadcrumb-section .inner .breadcrumb-list .breadcrumb-link a {
+            font-size: 14px; } }
         #main-page .breadcrumb-section .inner .breadcrumb-list .breadcrumb-link a.active {
           color: #000000;
           font-weight: 500; }
@@ -164,11 +198,21 @@ body {
   #main-page .top-list-section {
     margin-top: 30px;
     padding-bottom: 30px; }
+    @media screen and (max-width: 1199px) {
+      #main-page .top-list-section {
+        margin-top: 20px;
+        padding-bottom: 20px; } }
     #main-page .top-list-section.top-10-views {
       margin-top: 80px; }
+      @media screen and (max-width: 1199px) {
+        #main-page .top-list-section.top-10-views {
+          margin-top: 40px; } }
     #main-page .top-list-section .inner .list-title {
       font-size: 16px;
       font-weight: 400; }
+      @media screen and (max-width: 767px) {
+        #main-page .top-list-section .inner .list-title {
+          font-size: 14px; } }
     #main-page .top-list-section .inner .wrapper-btns .left-btn,
     #main-page .top-list-section .inner .wrapper-btns .right-btn {
       position: absolute;
@@ -183,6 +227,9 @@ body {
     #main-page .top-list-section .inner .wrapper-btns .right-btn {
       left: unset;
       right: -40px; }
+    @media screen and (max-width: 1199px) {
+      #main-page .top-list-section .inner .wrapper-btns {
+        display: none; } }
     #main-page .top-list-section .inner .mask {
       height: 350px;
       overflow: auto; }
@@ -246,8 +293,9 @@ body {
             transform: translate(0, -100%); }
   #main-page .latest-feedback-section {
     margin-top: 30px; }
-    #main-page .latest-feedback-section .inner .wrapper-title .title--md {
-      text-align: center; }
+    @media screen and (max-width: 1199px) {
+      #main-page .latest-feedback-section {
+        margin-top: 10px; } }
     #main-page .latest-feedback-section .inner .mask {
       margin-top: 10px;
       height: 220px;
@@ -303,16 +351,23 @@ body {
   #main-page .festivals-section {
     margin-top: 40px;
     padding-bottom: 20px; }
-    #main-page .festivals-section .inner .wrapper-title .title--md {
-      text-align: center; }
-    #main-page .festivals-section .inner .title--md {
-      padding-top: 40px;
-      text-align: center; }
+    @media screen and (max-width: 1199px) {
+      #main-page .festivals-section.festivals-page {
+        margin-top: 120px; } }
+    @media screen and (max-width: 767px) {
+      #main-page .festivals-section.festivals-page {
+        margin-top: 220px; } }
     #main-page .festivals-section .inner .festivals,
     #main-page .festivals-section .inner .wrapper-cards {
       margin: 30px 0 20px;
       gap: 30px 20px;
       flex-wrap: wrap; }
+      @media screen and (max-width: 767px) {
+        #main-page .festivals-section .inner .festivals,
+        #main-page .festivals-section .inner .wrapper-cards {
+          gap: unset;
+          row-gap: 30px;
+          justify-content: space-between; } }
       #main-page .festivals-section .inner .festivals .card,
       #main-page .festivals-section .inner .wrapper-cards .card {
         flex: 1;
@@ -322,6 +377,17 @@ body {
         border-radius: 15px;
         background-color: #ffffff;
         box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.5); }
+        @media screen and (max-width: 1199px) {
+          #main-page .festivals-section .inner .festivals .card,
+          #main-page .festivals-section .inner .wrapper-cards .card {
+            max-width: 540px;
+            min-width: 540px; } }
+        @media screen and (max-width: 767px) {
+          #main-page .festivals-section .inner .festivals .card,
+          #main-page .festivals-section .inner .wrapper-cards .card {
+            max-width: 340px;
+            min-width: 340px;
+            height: 220px; } }
         #main-page .festivals-section .inner .festivals .card .left-card,
         #main-page .festivals-section .inner .wrapper-cards .card .left-card {
           flex: 1;
@@ -329,6 +395,10 @@ body {
           height: 100%;
           border-radius: 15px 0 0 15px;
           overflow: hidden; }
+          @media screen and (max-width: 767px) {
+            #main-page .festivals-section .inner .festivals .card .left-card,
+            #main-page .festivals-section .inner .wrapper-cards .card .left-card {
+              max-width: 140px; } }
           #main-page .festivals-section .inner .festivals .card .left-card:hover .card-image img,
           #main-page .festivals-section .inner .wrapper-cards .card .left-card:hover .card-image img {
             scale: 1.5;
@@ -345,11 +415,25 @@ body {
           height: 100%;
           padding: 20px;
           border-radius: 0 15px 15px 0; }
+          @media screen and (max-width: 767px) {
+            #main-page .festivals-section .inner .festivals .card .right-card,
+            #main-page .festivals-section .inner .wrapper-cards .card .right-card {
+              max-width: 200px;
+              row-gap: 10px;
+              padding: 10px; } }
           #main-page .festivals-section .inner .festivals .card .right-card .festival__name,
           #main-page .festivals-section .inner .wrapper-cards .card .right-card .festival__name {
             text-align: center;
             font-size: 16px;
             font-weight: 550; }
+            @media screen and (max-width: 767px) {
+              #main-page .festivals-section .inner .festivals .card .right-card .festival__name,
+              #main-page .festivals-section .inner .wrapper-cards .card .right-card .festival__name {
+                font-size: 12px; } }
+          @media screen and (max-width: 767px) {
+            #main-page .festivals-section .inner .festivals .card .right-card .festival__detail .detail__location,
+            #main-page .festivals-section .inner .wrapper-cards .card .right-card .festival__detail .detail__location {
+              font-size: 12px; } }
           #main-page .festivals-section .inner .festivals .card .right-card .festival__detail .detail__desc,
           #main-page .festivals-section .inner .wrapper-cards .card .right-card .festival__detail .detail__desc {
             margin-top: 10px;
@@ -357,28 +441,53 @@ body {
             overflow: hidden;
             -webkit-box-orient: vertical;
             -webkit-line-clamp: 3; }
+            @media screen and (max-width: 767px) {
+              #main-page .festivals-section .inner .festivals .card .right-card .festival__detail .detail__desc,
+              #main-page .festivals-section .inner .wrapper-cards .card .right-card .festival__detail .detail__desc {
+                font-size: 12px;
+                -webkit-line-clamp: 4; } }
           #main-page .festivals-section .inner .festivals .card .right-card .festival__countdown,
           #main-page .festivals-section .inner .wrapper-cards .card .right-card .festival__countdown {
             margin-top: auto; }
+            @media screen and (max-width: 767px) {
+              #main-page .festivals-section .inner .festivals .card .right-card .festival__countdown,
+              #main-page .festivals-section .inner .wrapper-cards .card .right-card .festival__countdown {
+                font-size: 12px; } }
             #main-page .festivals-section .inner .festivals .card .right-card .festival__countdown span,
             #main-page .festivals-section .inner .wrapper-cards .card .right-card .festival__countdown span {
               display: block;
               text-align: center;
               font-size: 30px; }
+              @media screen and (max-width: 767px) {
+                #main-page .festivals-section .inner .festivals .card .right-card .festival__countdown span,
+                #main-page .festivals-section .inner .wrapper-cards .card .right-card .festival__countdown span {
+                  font-size: 16px; } }
     #main-page .festivals-section .inner .view-btn {
       bottom: 0;
       left: 50%;
       right: unset;
       transform: translate(-50%, 150%); }
+      @media screen and (max-width: 1199px) {
+        #main-page .festivals-section .inner .view-btn {
+          bottom: -20px; } }
   #main-page .subcribe-section {
     margin-top: 150px;
     padding: 30px 0;
     background-color: var(--md-blue); }
+    @media screen and (max-width: 1199px) {
+      #main-page .subcribe-section {
+        margin-top: 100px; } }
+    @media screen and (max-width: 767px) {
+      #main-page .subcribe-section {
+        margin-top: 80px; } }
     #main-page .subcribe-section .inner {
       column-gap: 20px; }
       #main-page .subcribe-section .inner .wrapper-content {
         flex: 1;
         max-width: 430px; }
+        @media screen and (max-width: 767px) {
+          #main-page .subcribe-section .inner .wrapper-content {
+            max-width: 300px; } }
         #main-page .subcribe-section .inner .wrapper-content::before {
           content: "";
           position: absolute;
@@ -388,19 +497,32 @@ body {
           width: 1px;
           height: 100%;
           background-color: #ffffff; }
+          @media screen and (max-width: 767px) {
+            #main-page .subcribe-section .inner .wrapper-content::before {
+              right: 15px; } }
         #main-page .subcribe-section .inner .wrapper-content .title {
           font-size: 30px;
           font-weight: 400;
           color: #ffffff; }
+          @media screen and (max-width: 767px) {
+            #main-page .subcribe-section .inner .wrapper-content .title {
+              font-size: 20px; } }
         #main-page .subcribe-section .inner .wrapper-content .subcribe-form #email-input {
           margin-top: 10px;
           padding: 12px 15px;
           border-radius: 5px;
           font-size: 18px; }
+          @media screen and (max-width: 767px) {
+            #main-page .subcribe-section .inner .wrapper-content .subcribe-form #email-input {
+              padding: 6px 9px;
+              font-size: 14px; } }
           #main-page .subcribe-section .inner .wrapper-content .subcribe-form #email-input:focus {
             outline: none; }
           #main-page .subcribe-section .inner .wrapper-content .subcribe-form #email-input::placeholder {
             font-size: 18px; }
+            @media screen and (max-width: 767px) {
+              #main-page .subcribe-section .inner .wrapper-content .subcribe-form #email-input::placeholder {
+                font-size: 14px; } }
         #main-page .subcribe-section .inner .wrapper-content .subcribe-form .subcribe-btn {
           padding: 12px 26px;
           background-color: var(--deep-blue);
@@ -408,6 +530,10 @@ body {
           color: #ffffff;
           font-size: 20px;
           cursor: pointer; }
+          @media screen and (max-width: 767px) {
+            #main-page .subcribe-section .inner .wrapper-content .subcribe-form .subcribe-btn {
+              padding: 6px 10px;
+              font-size: 14px; } }
       #main-page .subcribe-section .inner .wrapper-image {
         flex: 1;
         max-width: 700px;
@@ -419,11 +545,18 @@ body {
   #main-page .gallery-section {
     margin-top: 40px;
     padding-bottom: 40px; }
-    #main-page .gallery-section .title--md {
-      text-align: center; }
+    @media screen and (max-width: 1199px) {
+      #main-page .gallery-section {
+        margin-top: 150px; } }
+    @media screen and (max-width: 767px) {
+      #main-page .gallery-section {
+        margin-top: 220px; } }
     #main-page .gallery-section .inner {
       margin-top: 30px;
       column-gap: 20px; }
+      @media screen and (max-width: 1199px) {
+        #main-page .gallery-section .inner {
+          margin-top: 20px; } }
       #main-page .gallery-section .inner .side-bar {
         flex: 1;
         padding: 10px 20px;
@@ -436,11 +569,19 @@ body {
         #main-page .gallery-section .inner .side-bar .wrapper-check-continents h4 {
           font-size: 16px;
           font-weight: 550; }
+          @media screen and (max-width: 767px) {
+            #main-page .gallery-section .inner .side-bar .wrapper-check-zones h4,
+            #main-page .gallery-section .inner .side-bar .wrapper-check-continents h4 {
+              font-size: 14px; } }
         #main-page .gallery-section .inner .side-bar .wrapper-check-zones .flex,
         #main-page .gallery-section .inner .side-bar .wrapper-check-continents .flex {
           margin-top: 5px;
           flex-wrap: wrap;
           gap: 5px 10px; }
+        @media screen and (max-width: 767px) {
+          #main-page .gallery-section .inner .side-bar .wrapper-check-zones label,
+          #main-page .gallery-section .inner .side-bar .wrapper-check-continents label {
+            font-size: 12px; } }
         #main-page .gallery-section .inner .side-bar .wrapper-check-zones {
           margin-top: 10px; }
       #main-page .gallery-section .inner .wrapper-gallery {
@@ -459,14 +600,27 @@ body {
             padding: 10px;
             box-shadow: 0 1px 15px 0 rgba(0, 0, 0, 0.4);
             font-size: 18px; }
+            @media screen and (max-width: 767px) {
+              #main-page .gallery-section .inner .wrapper-gallery #search-form #search-input {
+                font-size: 14px; } }
             #main-page .gallery-section .inner .wrapper-gallery #search-form #search-input:focus {
               outline: none; }
             #main-page .gallery-section .inner .wrapper-gallery #search-form #search-input::placeholder {
               font-size: 16px; }
+              @media screen and (max-width: 767px) {
+                #main-page .gallery-section .inner .wrapper-gallery #search-form #search-input::placeholder {
+                  font-size: 14px; } }
         #main-page .gallery-section .inner .wrapper-gallery .gallery {
           margin-top: 20px;
           gap: 20px;
           flex-wrap: wrap; }
+          @media screen and (max-width: 1199px) {
+            #main-page .gallery-section .inner .wrapper-gallery .gallery {
+              justify-content: space-between; } }
+          @media screen and (max-width: 767px) {
+            #main-page .gallery-section .inner .wrapper-gallery .gallery {
+              gap: 10px;
+              justify-content: space-between; } }
           #main-page .gallery-section .inner .wrapper-gallery .gallery .card {
             height: 350px;
             width: 285px;
@@ -475,6 +629,13 @@ body {
             border: 0.5px solid #000000;
             overflow: hidden;
             transition: all 0.3s linear; }
+            @media screen and (max-width: 1199px) {
+              #main-page .gallery-section .inner .wrapper-gallery .gallery .card {
+                width: 260px; } }
+            @media screen and (max-width: 767px) {
+              #main-page .gallery-section .inner .wrapper-gallery .gallery .card {
+                width: 210px;
+                height: 260px; } }
             #main-page .gallery-section .inner .wrapper-gallery .gallery .card .top-card {
               width: 100%;
               height: 100%;
@@ -543,8 +704,12 @@ body {
   #main-page .contact-section {
     margin-top: 40px;
     padding-bottom: 40px; }
-    #main-page .contact-section .inner .title--md {
-      text-align: center; }
+    @media screen and (max-width: 1199px) {
+      #main-page .contact-section {
+        margin-top: 150px; } }
+    @media screen and (max-width: 767px) {
+      #main-page .contact-section {
+        margin-top: 220px; } }
     #main-page .contact-section .inner #feedback-form {
       width: 400px;
       margin: 0 auto; }
@@ -654,8 +819,12 @@ body {
   #main-page .about-section {
     margin-top: 40px;
     padding-bottom: 60px; }
-    #main-page .about-section .inner .title--md {
-      text-align: center; }
+    @media screen and (max-width: 1199px) {
+      #main-page .about-section {
+        margin-top: 150px; } }
+    @media screen and (max-width: 767px) {
+      #main-page .about-section {
+        margin-top: 220px; } }
     #main-page .about-section .inner .flex {
       margin-top: 30px; }
       #main-page .about-section .inner .flex .card {
@@ -691,8 +860,12 @@ body {
             padding: 0 20px; }
   #main-page .beach-detail-section {
     margin-top: 40px; }
-    #main-page .beach-detail-section .title--md {
-      text-align: center; }
+    @media screen and (max-width: 1199px) {
+      #main-page .beach-detail-section {
+        margin-top: 150px; } }
+    @media screen and (max-width: 767px) {
+      #main-page .beach-detail-section {
+        margin-top: 220px; } }
     #main-page .beach-detail-section .wrapper-main-image {
       height: 400px;
       margin: 20px 0; }
@@ -710,8 +883,12 @@ body {
   #main-page .festival-detail-section {
     margin-top: 40px;
     padding-bottom: 40px; }
-    #main-page .festival-detail-section .inner .title--md {
-      text-align: center; }
+    @media screen and (max-width: 1199px) {
+      #main-page .festival-detail-section {
+        margin-top: 150px; } }
+    @media screen and (max-width: 767px) {
+      #main-page .festival-detail-section {
+        margin-top: 220px; } }
     #main-page .festival-detail-section .inner .wrapper-info .festival__countdown {
       margin: 20px 0; }
       #main-page .festival-detail-section .inner .wrapper-info .festival__countdown span {
@@ -722,6 +899,9 @@ body {
       text-align: justify; }
     #main-page .festival-detail-section .inner .wrapper-info .festival__description {
       margin: 5px 0 20px; }
+    @media screen and (max-width: 1199px) {
+      #main-page .festival-detail-section .inner .wrapper-info .wrapper-image {
+        height: 500px; } }
 
 #footer-page {
   background-color: var(--earth);
@@ -739,6 +919,9 @@ body {
     width: 70%;
     height: 1px;
     background-color: #ffffff; }
+    @media screen and (max-width: 767px) {
+      #footer-page .inner::before {
+        width: 50%; } }
 
 .view-btn {
   position: absolute;
@@ -756,6 +939,23 @@ body {
   .view-btn:active {
     transform: translate(0, 4px);
     box-shadow: 0 0 0 0; }
+  @media screen and (max-width: 1199px) {
+    .view-btn {
+      right: 120px;
+      padding: 4px 20px;
+      font-size: 16px; } }
+  @media screen and (max-width: 767px) {
+    .view-btn {
+      right: 60px; } }
 
 .push {
-  height: 58px; }
+  height: 68px; }
+
+.title--md {
+  text-align: center; }
+  @media screen and (max-width: 1199px) {
+    .title--md {
+      font-size: 25px; } }
+  @media screen and (max-width: 767px) {
+    .title--md {
+      font-size: 18px; } }
