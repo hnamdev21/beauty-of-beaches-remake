@@ -62,11 +62,65 @@ body {
       max-width: 200px;
     }
 
+    .wrapper-nav--mb {
+      display: none;
+
+      @include respond(sm-phone) {
+        display: block;
+      }
+
+      .showMenuIcon {
+        color: #ffffff;
+      }
+
+      #showMenuBtn:checked {
+        & ~ .wrapper-nav {
+          &.nav--mb {
+            display: flex;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 2;
+            height: 100vh;
+            width: 50vw;
+            row-gap: 20px;
+            padding-top: 40px;
+            background-color: #ffffff;
+
+            li {
+              a {
+                color: #000000;
+              }
+            }
+
+            .closeMenuIcon {
+              position: absolute;
+              top: 10px;
+              right: 10px;
+            }
+          }
+        }
+
+        & ~ .mask {
+          position: fixed;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          background-color: rgba(0, 0, 0, 0.5);
+        }
+      }
+    }
+
     .wrapper-nav {
       column-gap: 36px;
 
       @include respond(phone) {
         column-gap: 12px;
+      }
+
+      @include respond(sm-phone) {
+        display: none;
       }
 
       .nav-link {
@@ -219,6 +273,10 @@ body {
     @include respond(phone) {
       height: 300px;
     }
+
+    @include respond(sm-phone) {
+      height: 250px;
+    }
   }
 
   .intro-section {
@@ -232,6 +290,10 @@ body {
       margin: 220px 0 0;
     }
 
+    @include respond(sm-phone) {
+      margin: 260px 0 0;
+    }
+
     .inner {
       .wrapper-title {
         margin: 0 auto 30px;
@@ -242,12 +304,25 @@ body {
             font-size: 30px;
           }
         }
+
+        @include respond(sm-phone) {
+          width: 100%;
+
+          .title--large {
+            font-size: 14px;
+          }
+        }
       }
 
       .wrapper-cards {
         margin: 0 auto 30px;
         width: css-min(calc(100% - 40px), 838px);
         column-gap: 81px;
+
+        @include respond(sm-phone) {
+          width: 100%;
+          column-gap: 20px;
+        }
 
         .card {
           flex: 1;
@@ -270,6 +345,11 @@ body {
           @include respond(phone) {
             height: 250px;
           }
+
+          @include respond(sm-phone) {
+            max-width: 150px;
+            height: 140px;
+          }
         }
       }
     }
@@ -280,6 +360,10 @@ body {
 
     @include respond(phone) {
       margin-top: 40px;
+    }
+
+    @include respond(sm-phone) {
+      margin-top: 20px;
     }
 
     .inner {
@@ -302,6 +386,10 @@ body {
 
             @include respond(phone) {
               font-size: 14px;
+            }
+
+            @include respond(sm-phone) {
+              font-size: 12px;
             }
 
             &.active {
@@ -327,6 +415,11 @@ body {
       padding-bottom: 20px;
     }
 
+    @include respond(sm-phone) {
+      margin-top: 10px;
+      padding-bottom: 10px;
+    }
+
     &.top-10-views {
       margin-top: 80px;
 
@@ -342,6 +435,10 @@ body {
 
         @include respond(phone) {
           font-size: 14px;
+        }
+
+        @include respond(sm-phone) {
+          font-size: 12px;
         }
       }
 
@@ -576,6 +673,10 @@ body {
           justify-content: space-between;
         }
 
+        @include respond(sm-phone) {
+          gap: 20px 10px;
+        }
+
         .card {
           flex: 1;
           max-width: 590px;
@@ -594,6 +695,11 @@ body {
             max-width: 340px;
             min-width: 340px;
             height: 220px;
+          }
+
+          @include respond(sm-phone) {
+            max-width: unset;
+            min-width: unset;
           }
 
           .left-card {
@@ -819,12 +925,23 @@ body {
       margin-top: 220px;
     }
 
+    @include respond(sm-phone) {
+      margin-top: 260px;
+    }
+
     .inner {
       margin-top: 30px;
       column-gap: 20px;
 
       @include respond(tablet) {
         margin-top: 20px;
+      }
+
+      @include respond(sm-phone) {
+        margin-top: 20px;
+        flex-wrap: wrap;
+        column-gap: unset;
+        justify-content: center;
       }
 
       .side-bar {
@@ -836,6 +953,12 @@ body {
         border: 0.5px solid #000000;
         border-radius: 5px;
 
+        @include respond(sm-phone) {
+          width: 100%;
+          height: 250px;
+          padding: 10px;
+        }
+
         .wrapper-check-zones,
         .wrapper-check-continents {
           h4 {
@@ -844,6 +967,10 @@ body {
 
             @include respond(phone) {
               font-size: 14px;
+            }
+
+            @include respond(sm-phone) {
+              font-size: 12px;
             }
           }
 
@@ -855,6 +982,10 @@ body {
 
           label {
             @include respond(phone) {
+              font-size: 12px;
+            }
+
+            @include respond(sm-phone) {
               font-size: 12px;
             }
           }
@@ -869,8 +1000,13 @@ body {
         flex: 2;
         max-width: 895px;
 
+        @include respond(sm-phone) {
+          margin-top: 20px;
+          width: 100%;
+        }
+
         #search-form {
-          width: max-content;
+          width: 100%;
           margin: 0 auto;
 
           #search-input {
@@ -886,6 +1022,11 @@ body {
 
             @include respond(phone) {
               font-size: 14px;
+            }
+
+            @include respond(sm-phone) {
+              font-size: 12px;
+              width: 100%;
             }
 
             &:focus {
@@ -915,6 +1056,11 @@ body {
             justify-content: space-between;
           }
 
+          @include respond(sm-phone) {
+            gap: 10px;
+            justify-content: space-between;
+          }
+
           .card {
             height: 350px;
             width: 285px;
@@ -931,6 +1077,11 @@ body {
             @include respond(phone) {
               width: 210px;
               height: 260px;
+            }
+
+            @include respond(sm-phone) {
+              width: 48%;
+              height: 220px;
             }
 
             .top-card {
@@ -975,15 +1126,27 @@ body {
               transform: translate(0, 100%);
               transition: all 1s linear;
 
+              @include respond(sm-phone) {
+                height: 75%;
+              }
+
               .beach__name {
                 font-size: 18px;
                 font-weight: 400;
+
+                @include respond(sm-phone) {
+                  font-size: 14px;
+                }
               }
 
               .beach__info {
                 li {
                   font-size: 14px;
                   padding-left: 10px;
+
+                  @include respond(sm-phone) {
+                    font-size: 12px;
+                  }
                 }
               }
 
@@ -1015,11 +1178,15 @@ body {
           margin: 20px auto 0;
 
           li {
-            margin: 0 10px 0;
+            margin: 0 10px;
             padding: 5px 0;
             border-radius: 5px;
             background-color: var(--light-blue);
             cursor: pointer;
+
+            @include respond(sm-phone) {
+              margin: 0 5px;
+            }
 
             &:hover {
               background-color: var(--md-blue);
@@ -1052,10 +1219,18 @@ body {
       margin-top: 220px;
     }
 
+    @include respond(sm-phone) {
+      margin-top: 260px;
+    }
+
     .inner {
       #feedback-form {
         width: 400px;
         margin: 0 auto;
+
+        @include respond(sm-phone) {
+          width: 100%;
+        }
 
         .wrapper-input {
           position: relative;
@@ -1234,9 +1409,20 @@ body {
       margin-top: 220px;
     }
 
+    @include respond(sm-phone) {
+      margin-top: 260px;
+    }
+
     .inner {
       .flex {
         margin-top: 30px;
+
+        @include respond(sm-phone) {
+          gap: 20px;
+          width: 100%;
+          flex-direction: column;
+          flex-wrap: wrap;
+        }
 
         .card {
           flex: 1;
@@ -1247,9 +1433,22 @@ body {
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
           transition: all 0.3s linear;
 
+          @include respond(sm-phone) {
+            flex: unset;
+            min-width: 100%;
+
+            &:nth-child(1) {
+              order: 2;
+            }
+          }
+
           &:last-child,
           &:first-child {
             margin-top: 40px;
+
+            @include respond(sm-phone) {
+              margin-top: unset;
+            }
           }
 
           &:hover {
@@ -1303,14 +1502,29 @@ body {
       margin-top: 220px;
     }
 
+    @include respond(sm-phone) {
+      margin-top: 260px;
+    }
+
     .wrapper-main-image {
       height: 400px;
       margin: 20px 0;
+
+      @include respond(sm-phone) {
+        height: 250px;
+      }
     }
 
     .wrapper-info {
       padding: 20px 0 40px;
       column-gap: 20px;
+
+      @include respond(sm-phone) {
+        padding: 10px 0 20px;
+        flex-direction: column;
+        column-gap: unset;
+        row-gap: 20px;
+      }
 
       .wrapper-sub-image {
         flex: 2;
@@ -1339,6 +1553,10 @@ body {
 
     @include respond(phone) {
       margin-top: 220px;
+    }
+
+    @include respond(sm-phone) {
+      margin-top: 260px;
     }
 
     .inner {
@@ -1429,6 +1647,13 @@ body {
   @include respond(phone) {
     right: 60px;
   }
+
+  @include respond(sm-phone) {
+    bottom: 0;
+    right: 20px;
+    padding: 2px 10px;
+    font-size: 12px;
+  }
 }
 
 .push {
@@ -1444,5 +1669,9 @@ body {
 
   @include respond(phone) {
     font-size: 18px;
+  }
+
+  @include respond(sm-phone) {
+    font-size: 14px;
   }
 }

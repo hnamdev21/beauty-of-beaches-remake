@@ -1,4 +1,10 @@
 @mixin respond($type) {
+  @if $type == sm-phone {
+    @media screen and (max-width: 565px) {
+      @content;
+    }
+  }
+
   @if $type == phone {
     @media screen and (max-width: 767px) {
       @content;
